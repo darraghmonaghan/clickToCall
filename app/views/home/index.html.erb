@@ -1,0 +1,16 @@
+<h1>Testing Testing</h1>
+
+<br>
+	<%= form_for :call, :url => dial_path do |f| %>
+
+			<div class="form-group">
+				<%= f.text_field :listener, placeholder: 'Who is listening?', class: "form-control", required: true %>
+			</div>
+			<div class="form-group">
+				<%= f.text_field :speaker, placeholder: 'Who will you be speaking to?', class: "form-control", required: true %>
+			</div>
+
+			<%= f.submit 'Call', class: "btn btn-default ghost-button" %>
+							
+	<% end %>
+
