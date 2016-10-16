@@ -22,8 +22,7 @@ class HomeController < ApplicationController
 
 		call = @client.account.calls.create(:url => "https://handler.twilio.com/twiml/EH4908e9b4eb9c57d84abc9e3a2bdcfe8a",
 		    :to => @listener,
-		    :from => "+441158243993",
-		    :sendDigits => @speaker)
+		    :from => "+353873667844")
 		
 	end
 
