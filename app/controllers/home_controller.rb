@@ -16,17 +16,15 @@ class HomeController < ApplicationController
 		require 'twilio-ruby'
 
 		# Get your Account Sid and Auth Token from twilio.com/user/account
-		account_sid = 'ACXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
-		auth_token = 'your_auth_token'
-		@client = Twilio::REST::Client.new account_sid, auth_token
+		account_sid = 'AC6cd107da471da294f7c3ced8672ad941'
+		auth_token = '989b1924038bbae4c611095ba066969e'
+		@client = Twilio::REST::Client.new(account_sid, auth_token)
 
-		call = @client.account.calls.create(:url => "localhost:3000/twiml",
+		call = @client.account.calls.create(:url => "https://handler.twilio.com/twiml/EH4908e9b4eb9c57d84abc9e3a2bdcfe8a",
 		    :to => @listener,
-		    :from => "+15017250604",
+		    :from => "+441158243993",
 		    :sendDigits => @speaker)
 		
-
-
 	end
 
 end
