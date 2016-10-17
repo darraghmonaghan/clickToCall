@@ -20,9 +20,15 @@ class HomeController < ApplicationController
 		auth_token = '989b1924038bbae4c611095ba066969e'
 		@client = Twilio::REST::Client.new(account_sid, auth_token)
 
-		call = @client.account.calls.create(:url => "https://handler.twilio.com/twiml/EH4908e9b4eb9c57d84abc9e3a2bdcfe8a",
+		call = @client.account.calls.create(
+			:url => "https://handler.twilio.com/twiml/EH4908e9b4eb9c57d84abc9e3a2bdcfe8a",
 		    :to => @listener,
-		    :from => "+353873667844")
+		    :from => '+15005550006')
+
+
+		#@caller_id = @client.account.outgoing_caller_ids.get(account_sid)
+		#puts @caller_id.phone_number
+
 		
 	end
 
