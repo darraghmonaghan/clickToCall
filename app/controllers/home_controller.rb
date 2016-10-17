@@ -16,8 +16,8 @@ class HomeController < ApplicationController
 		require 'twilio-ruby'
 
 		# Get your Account Sid and Auth Token from twilio.com/user/account
-		account_sid = 'AC6cd107da471da294f7c3ced8672ad941'
-		auth_token = '989b1924038bbae4c611095ba066969e'
+		account_sid = ENV["TWILIO_ACCOUNT_SID"]
+		auth_token = ENV["TWILIO_AUTH_TOKEN"]
 		@client = Twilio::REST::Client.new(account_sid, auth_token)
 
 		call = @client.account.calls.create(
